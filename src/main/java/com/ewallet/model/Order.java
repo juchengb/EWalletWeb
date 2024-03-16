@@ -11,5 +11,6 @@ public class Order {
 	Integer id;
 	String from;
 	String to;
+	Integer amount;
 	
 }

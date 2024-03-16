@@ -10,4 +10,8 @@ import lombok.Data;
 public class Flow {
 	Integer id;
 	Integer orderId;
+	Integer walletId;
+	Integer update;
+	Integer balance;
+	
 }
