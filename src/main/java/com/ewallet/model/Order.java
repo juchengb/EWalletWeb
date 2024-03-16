@@ -7,6 +7,7 @@ import lombok.Data;
 @Entity
 @Table
 @Data
-public class User {
-
+public class Order {
+	Integer id;
+	
 }

@@ -1,7 +1,5 @@
 package com.ewallet.model;
 
-import java.util.Date;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.Data;
@@ -9,10 +7,7 @@ import lombok.Data;
 @Entity
 @Table
 @Data
-public class Wallet {
-	
+public class Flow {
 	Integer id;
-	String user;
-	Date lastUpdate;
-	
+	Integer orderId;
 }
