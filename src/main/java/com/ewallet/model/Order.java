@@ -9,5 +9,7 @@ import lombok.Data;
 @Data
 public class Order {
 	Integer id;
+	String from;
+	String to;
 	
 }
