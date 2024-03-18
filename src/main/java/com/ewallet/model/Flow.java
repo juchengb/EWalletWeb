@@ -1,17 +1,36 @@
 package com.ewallet.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Flow {
-	Integer id;
-	Integer orderId;
-	Integer walletId;
-	Integer update;
-	Integer balance;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	@Column
+	private Integer orderId;
+	
+	@Column
+	private Integer walletId;
+	
+	@Column
+	private Integer update;
+	
+	@Column
+	private Integer balance;
 	
 }
