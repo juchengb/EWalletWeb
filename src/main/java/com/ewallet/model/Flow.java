@@ -1,10 +1,13 @@
 package com.ewallet.model;
 
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,11 +24,13 @@ public class Flow { //錢包交易明細
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id; // 交易明細編號
 	
-	@Column
-	private Integer orderId; // 交易訂單編號
+	@JoinColumn(name = "order_id")
+	@ManyToOne
+	private Order order; // 交易訂單
 	
-	@Column
-	private Integer walletId; // 錢包編號
+	@JoinColumn(name = "wallet_id")
+	@ManyToOne
+	private Wallet wallet; // 交易訂單
 	
 	@Column
 	private Double updateAmount; // 更新金額

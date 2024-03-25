@@ -2,12 +2,16 @@ package com.ewallet.model;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,7 +27,7 @@ public class Wallet { // 錢包資訊
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id; // 錢包編號
 	
-	@Column
+	@Column(unique = true, nullable = false)
 	private String adress; // 錢包地址
 	
 	@Column
@@ -36,6 +40,8 @@ public class Wallet { // 錢包資訊
 	private Double balance; // 錢包餘額
 	
 	@Column
-	private Date lastUpdate; // 錢包最後更新時間
+	@Temporal(TemporalType.TIMESTAMP)
+	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
+	private Date lastUpdateTine; // 錢包最後更新時間
 	
 }
