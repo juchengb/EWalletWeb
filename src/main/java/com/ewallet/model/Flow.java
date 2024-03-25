@@ -15,22 +15,22 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Flow {
+public class Flow { //錢包交易明細
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Long id; // 交易明細編號
 	
 	@Column
-	private Integer orderId;
+	private Integer orderId; // 交易訂單編號
 	
 	@Column
-	private Integer walletId;
+	private Integer walletId; // 錢包編號
 	
 	@Column
-	private Integer update;
+	private Double updateAmount; // 更新金額
 	
 	@Column
-	private Integer balance;
+	private Double balance; // 交易後餘額
 	
 }

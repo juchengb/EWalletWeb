@@ -17,22 +17,25 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Wallet {
+public class Wallet { // 錢包資訊
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Long id; // 錢包編號
 	
 	@Column
-	private String name;
+	private String adress; // 錢包地址
 	
 	@Column
-	private String accountNumber;
+	private String name; // 錢包名稱
 	
 	@Column
-	private Double currentBalance;
+	private Currency currency; // 錢包幣別
 	
 	@Column
-	private Date lastUpdate;
+	private Double balance; // 錢包餘額
+	
+	@Column
+	private Date lastUpdate; // 錢包最後更新時間
 	
 }
